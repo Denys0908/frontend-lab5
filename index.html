@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Сардаковський Денис, ІК-44, Лабораторна робота 5, Варіант 24, HTML5, CSS3, JavaScript, Події, Регулярні вирази">
+  <meta name="description" content="Лабораторна робота №5 студента Сардаковського Дениса. JavaScript: події та регулярні вирази.">
+  <title>Сардаковський Д.О. Група ІК-44 Лаб№5 Вар№24</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="page-header">
+    <h1>Лабораторна робота №5. Варіант 24</h1>
+  </header>
+
+  <main class="main-container">
+    <!-- Завдання 1: Форма та перевірка даних регулярними виразами -->
+    <section class="task-section" aria-labelledby="form-heading">
+      <div class="form-workspace">
+        <!-- Ліва колонка: Форма для заповнення -->
+        <div class="form-column">
+          <h2 id="form-heading">Форма для заповнення</h2>
+          <form id="validation-form" novalidate autocomplete="off">
+            <div id="form-fields-container">
+              <!-- Поле 1 (Табл. 2, рядок 1): ПІБ -->
+              <div class="form-group">
+                <label for="field-fullName">ПІБ (формат: ТТТТТТ Т.Т.)</label>
+                <input
+                  type="text"
+                  id="field-fullName"
+                  name="fullName"
+                  data-field-id="1"
+                  placeholder="ПІБ (напр. Сардаковський Д.О.)"
+                >
+                <span class="error-hint" id="error-fullName"></span>
+              </div>
+
+              <!-- Поле 2 (Табл. 2, рядок 2): Варіант -->
+              <div class="form-group">
+                <label for="field-variant">Варіант (формат: ЧЧ)</label>
+                <input
+                  type="text"
+                  id="field-variant"
+                  name="variant"
+                  data-field-id="2"
+                  placeholder="Варіант (напр. 24)"
+                >
+                <span class="error-hint" id="error-variant"></span>
+              </div>
+
+              <!-- Поле 3 (Табл. 2, рядок 3): Група -->
+              <div class="form-group">
+                <label for="field-group">Група (формат: ТТ-ЧЧ)</label>
+                <input
+                  type="text"
+                  id="field-group"
+                  name="group"
+                  data-field-id="3"
+                  placeholder="Група (напр. ІК-44)"
+                >
+                <span class="error-hint" id="error-group"></span>
+              </div>
+
+              <!-- Поле 4 (Табл. 2, рядок 6): Факультет -->
+              <div class="form-group">
+                <label for="field-faculty">Факультет (формат: ТТТТ)</label>
+                <input
+                  type="text"
+                  id="field-faculty"
+                  name="faculty"
+                  data-field-id="6"
+                  placeholder="Факультет (напр. ФІОТ)"
+                >
+                <span class="error-hint" id="error-faculty"></span>
+              </div>
+
+              <!-- Поле 5 (Табл. 2, рядок 7): Дата народження -->
+              <div class="form-group">
+                <label for="field-birthDate">Дата народж. (формат: ЧЧ.ЧЧ.ЧЧЧЧ)</label>
+                <input
+                  type="text"
+                  id="field-birthDate"
+                  name="birthDate"
+                  data-field-id="7"
+                  placeholder="Дата народж. (напр. 09.08.2007)"
+                >
+                <span class="error-hint" id="error-birthDate"></span>
+              </div>
+            </div>
+
+            <button type="submit" id="btn-submit">Підтвердити</button>
+          </form>
+        </div>
+
+        <!-- Права колонка: Виведення перевіреної інформації -->
+        <div class="output-column" id="output-panel">
+          <h2>Введені дані</h2>
+          <div id="output-content">
+            <p class="output-placeholder">Дані з'являться тут після успішної валідації форми.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Завдання 2: Таблиця 6х6 та обробка подій миші -->
+    <section class="task-section" aria-labelledby="table-heading">
+      <div class="table-workspace">
+        <h2 id="table-heading">Таблиця 6×6 (клітинка варіанта: №24)</h2>
+
+        <div class="palette-wrapper">
+          <label for="color-picker" class="palette-label">Палітра кольору:</label>
+          <input
+            type="color"
+            id="color-picker"
+            value="#0078d7"
+            title="Оберіть колір для кліку та подвійного кліку"
+          >
+        </div>
+
+        <table id="matrix-table">
+          <tbody id="matrix-body">
+            <tr>
+              <td>Таблиця 6×6 генерується JavaScript...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+/* 1. Глобальне скидання та базові параметри документа */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px 32px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  line-height: 1.45;
+  color: #111111;
+  background-color: #ffffff;
+}
+
+.page-header {
+  max-width: 920px;
+  margin: 0 auto 20px auto;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.main-container {
+  max-width: 920px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.task-section {
+  background-color: #ffffff;
+}
+
+/* 2. Завдання 1: Макет форми та панелі введених даних */
+.form-workspace {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 48px;
+}
+
+.form-column {
+  width: 360px;
+  max-width: 100%;
+}
+
+.form-column h2 {
+  margin: 0 0 18px 0;
+  font-size: 24px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 4px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 11px 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #222222;
+  background-color: #ffffff;
+  border: 1px solid #9aa0a6;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus {
+  border-color: #0078d7;
+  box-shadow: 0 0 0 2px rgba(0, 120, 215, 0.15);
+}
+
+/* Стан валідного поля (зелена рамка, як на зразку в методичці) */
+.form-group input.input-valid {
+  border: 3px solid #008000;
+  background-color: #f6fff6;
+}
+
+/* Стан поля з помилкою (виділення рядка з помилкою) */
+.form-group input.input-error {
+  border: 2px solid #d93025;
+  background-color: #fff2f2;
+}
+
+.error-hint {
+  min-height: 16px;
+  margin-top: 3px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #d93025;
+}
+
+#btn-submit {
+  width: 100%;
+  margin-top: 4px;
+  padding: 12px 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #444444;
+  background-color: #f2f2f2;
+  border: 1px solid #d6d6d6;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+#btn-submit:hover {
+  background-color: #e6e6e6;
+  border-color: #bfbfbf;
+}
+
+/* Права колонка: Введені дані */
+.output-column {
+  flex: 1;
+  min-width: 260px;
+}
+
+.output-column h2 {
+  margin: 0 0 18px 0;
+  font-size: 26px;
+}
+
+.output-placeholder {
+  margin: 0;
+  color: #666666;
+  font-style: italic;
+}
+
+.output-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.output-list li {
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+/* 3. Завдання 2: Палітра та інтерактивна таблиця 6х6 */
+.table-workspace {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.table-workspace h2 {
+  margin: 0 0 14px 0;
+  font-size: 24px;
+}
+
+.palette-wrapper {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.palette-label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333333;
+}
+
+/* Широка горизонтальна палітра над таблицею за зразком методички */
+#color-picker {
+  width: 348px;
+  height: 38px;
+  padding: 4px 6px;
+  background-color: #e4e7eb;
+  border: 1px solid #b8bec6;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#matrix-table {
+  width: 348px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  user-select: none;
+}
+
+#matrix-table td {
+  width: 58px;
+  height: 58px;
+  border: 1px solid #000000;
+  text-align: center;
+  vertical-align: middle;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+  background-color: #ffffff;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+/* Виділення інтерактивної клітинки варіанта №24 курсором */
+#matrix-table td.variant-cell {
+  cursor: pointer;
+}
